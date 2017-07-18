@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 注册, 配合使用
+     第一步 注册
+     -->
+
+
+    <!--<context:annotation-config/>-->
+    <!--开启注解-->
+    <context:component-scan base-package="com.werner.di">
+    </context:component-scan>
+    <!--第一种-->
+    <bean name="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="configLocation">
+            <value>hibernate.cfg.xml</value>
+        </property>
+    </bean>
+
+    <!--第二种配置-->
+    <!--<bean name="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+    <!--<property name="hibernateProperties">-->
+    <!--<props>-->
+    <!--<prop key="connection.username">root</prop>-->
+    <!--<prop key="connection.password">password</prop>-->
+    <!--</props>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--<import resource="test.xml"/>-->
+    <!--&lt;!&ndash;Spring&ndash;&gt;-->
+
+    <!--<bean id="ac" class="com.werner.di.controller.AccountController">-->
+    <!--<property name="service" ref="acService"/>-->
+    <!--</bean>-->
+    <!--<bean id="acService" class="com.werner.di.service.impl.AccountServiceImpl">-->
+    <!--<property name="dao" ref="acDao"/>-->
+    <!--</bean>-->
+    <!--<bean id="acDao" class="com.werner.di.dao.impl.BaseDaoImpl"/>-->
+
+    <!--&lt;!&ndash;通过构造器去加载对象&ndash;&gt;-->
+    <!--&lt;!&ndash;UserInfo&ndash;&gt;-->
+    <!--&lt;!&ndash;userInfo&ndash;&gt;-->
+    <!--&lt;!&ndash;byname 底层有生成器  把类的名字小写&ndash;&gt;-->
+    <!--<property name="name" value="大法师的方式"/>-->
+    <!--</bean>-->
+
+
+
+</beans>
